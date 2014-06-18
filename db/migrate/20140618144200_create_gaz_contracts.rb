@@ -5,11 +5,11 @@ class CreateGazContracts < ActiveRecord::Migration
       t.string  :nombre_antiguo_titular_gas
       t.string  :apellido_antiguo_titular_gas
       t.boolean :cambio_de_titular
-      t.string  :dni_gaz
-      t.string  :cups_gaz
-      t.text    :direccion_gaz
-      t.string  :contador_gaz
-      t.string  :tipo_gaz
+      t.string  :dni_gas
+      t.string  :cups_gas
+      t.string  :contador_gas
+      t.string  :tipo_gas
+      t.string  :tarifa_gas
     end
   end
 end
