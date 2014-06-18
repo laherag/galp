@@ -28,16 +28,16 @@ es:
           10% de descuento en el término fijo de gas para el CUPS __%{cups_gaz}__.
         confort: |
           20% de descuento en el término de fijo de gas para el CUPS __%{cups_gaz}__
-          y un 50% de descuento en el servicio Confort Gas durante el primer año para primeras contrataciones.
+          contratando el servicio Confort.
 
       gaz_y_luz:
         no_confort: |
-          2% de descuento en el término de consumo de luz para el CUPS    __%{cups_luz}__
+          20% de descuento en el término de consumo de luz para el CUPS    __%{cups_luz}__
           y un 10% de descuento en el término de fijo de gas para el CUPS __%{cups_gaz}__.
         confort: |
-          2% de descuento en el término de consumo de luz para el CUPS    __%{cups_luz}__
+          20% de descuento en el término de consumo de luz para el CUPS    __%{cups_luz}__
           y un 20% de descuento en el término de fijo de gas para el CUPS __%{cups_gaz}__
-          y un 50% de descuento en el servicio Confort durante el primer año para primeras contrataciones.
+          contratando servicio Confort.
 
     explication: |
       La forma de pago escogida es domiciliación bancaria en la cuenta %{numero_de_cuenta}
@@ -52,9 +52,9 @@ es:
       sello, que le adjuntamos. 
       Dispone de 14 días hábiles para ejercer su derecho de revocación. Aún recibirá
       alguna factura de su compañía actual por un periodo probablemente inferior al 
-      normal. A partir de ahí recibirá la factura de GALP con todas nuestras ventajas. 
+      normal. A partir de ahí recibirá la factura de GALP con todas sus ventajas. 
       Sus datos personales serán tratados para la gestión de este contrato 
-      por GALP-HC Energía, con domicilio en Pza. de la Gesta 2 de Oviedo, donde podrán 
+      por GALP ENERGIA, con domicilio en  Calle Anabel Segura, 16, 28108 Arroyo de la Vega, Alcobendas, Madrid,  donde podrán 
       ejercitar por escrito los derechos de acceso, rectificación, cancelación y oposición.
       Con esta finalidad autoriza a que dichos datos puedan ser cedidos a la 
       comercializadora de su grupo de empresas que corresponda según el producto o 
@@ -74,11 +74,11 @@ es:
       En unos días su representado recibirá la documentación por duplicado, de la que sólo tendrá que 
       devolvernos una de las copias firmada en el sobre autofranqueo, no necesita 
       sello, que le adjuntamos. 
-      Dispone de 7 días hábiles para ejercer su derecho de revocación. Aún recibirá
+      Dispone de 14 días hábiles para ejercer su derecho de revocación. Aún recibirá
       alguna factura de su compañía actual por un periodo probablemente inferior al 
       normal. A partir de ahí recibirá la factura de GALP con todas sus ventajas. 
       Sus datos personales y los de su representado serán tratados para la gestión de este/estos contrato/s 
-      por GALP-HC Energía, con domicilio en Pza. de la Gesta 2 de Oviedo, donde podrán 
+      por GALP ENERGIA, con domicilio en  Calle Anabel Segura, 16, 28108 Arroyo de la Vega, Alcobendas, Madrid, donde podrán 
       ejercitar por escrito los derechos de acceso, rectificación, cancelación y oposición.
       Con esta finalidad autoriza a que dichos datos puedan ser cedidos a la 
       comercializadora de su grupo de empresas que corresponda según el producto o 
