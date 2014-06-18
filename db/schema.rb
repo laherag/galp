@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618145100) do
+ActiveRecord::Schema.define(version: 20140618151400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,13 @@ ActiveRecord::Schema.define(version: 20140618145100) do
     t.string  "tarifa_luz"
     t.boolean "cambio_potencia"
     t.string  "tipo_potencia"
+  end
+
+  create_table "records", force: true do |t|
+    t.string   "file"
+    t.integer  "contract_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_stats", force: true do |t|
