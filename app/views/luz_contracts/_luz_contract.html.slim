@@ -1,0 +1,22 @@
+#luz-form
+  = f.input :cambio_de_titular, as: :boolean
+  = f.input :nombre_antiguo_titular_luz  
+  = f.input :apellido_antiguo_titular_luz
+  = f.input :dni_luz
+  = f.input :cups_luz
+  = f.input :contador_luz, include_blank: false
+  = f.input :tipo_luz
+  = f.input :potencia_deseada_luz
+  = f.input :cambio_potencia, as: :boolean
+  = f.input :tipo_potencia, disabled: true
+  = f.input :tarifa_luz, include_blank: false
+  = f.input :certificado, as: :boolean
+
+  #luz-options
+    = f.input :codigo_cie
+    = f.input :codigo_instalador_cie
+    = f.input :nombre_razon_del_instalador
+    = f.input :potencia_de_la_instalacion
+    = f.input :fecha_inicio_validez_cie, as: :date, include_blank: true
+    = f.input :fecha_caducidad_cie, as: :date, include_blank: true
+    = f.input :tension_suministro, include_blank: false

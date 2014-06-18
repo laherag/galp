@@ -1,0 +1,2 @@
+class GalpDecorator < ViewDecorator
+end

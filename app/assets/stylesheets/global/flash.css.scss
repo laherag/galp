@@ -1,0 +1,14 @@
+.flash {
+  @extend .alert;
+  margin-top: 20px;
+}
+
+.flash-error {
+  @extend .flash;
+  @extend .alert-danger;
+}
+
+.flash-notice {
+  @extend .flash;
+  @extend .alert-info;
+}

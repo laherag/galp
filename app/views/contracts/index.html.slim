@@ -1,0 +1,42 @@
+h1 Contratos
+
+nav.navbar.navbar-default role="navigation"
+  .container-fluid
+    
+    / SEARCH FILTER
+    form#ransack-search role="form"
+      = search_form_for [searched_contracts], url: "/contracts/#{params[:action]}",
+                                              html: { class: 'navbar-form' } do |f|
+        = render partial: 'partials/search_dates_and_name', locals: { f: f }
+        = render partial: 'partials/search_status', locals: { f: f }
+
+        .col-sm-3
+          - if current_user.admin
+            = render partial: 'partials/search_teleop', locals: { f: f }
+
+          = render partial: 'partials/search_cig', locals: { f: f }
+          
+        = f.submit 'Buscar', class: 'btn btn-info',
+                             style: 'float: left; margin-right:20px; margin-top:70px;',
+                             name: 'buscar'
+        
+        - if current_user.admin or current_user.galp
+          = f.submit 'Exportación csv', class: 'btn btn-success', 
+                                        style: 'float: left; margin-top:70px;',
+                                        name: 'csv'
+        
+
+/ PAGINATION
+= paginate paginated_contracts, :theme => 'twitter-bootstrap-3'
+
+/ LEGEND
+= render partial: 'contract_legend'
+
+/ CONTRACTS TABLE
+table.table
+  - if current_user.admin
+    = render partial: 'admin_index', locals: { contracts: paginated_contracts }
+  - elsif current_user.teleop
+    = render partial: 'teleop_index', locals: { contracts: paginated_contracts }
+  - else
+    = render partial: 'galp_index', locals: { contracts: paginated_contracts }

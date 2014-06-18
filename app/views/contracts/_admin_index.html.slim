@@ -1,0 +1,42 @@
+thead
+  tr
+    th = sort_link searched_contracts, :created_at, "Fecha venta"
+    th = sort_link searched_contracts, :nombre, "Nombre"
+    th = sort_link searched_contracts, :apellido, "Apellido"
+    th = sort_link searched_contracts, :cig, "CIG"
+    th = sort_link searched_contracts, :tipo, "Plan contratado"
+    th = sort_link searched_contracts, :moving_type, "Alta/Cambio"
+    th = sort_link searched_contracts, :teleop, "Teleop"
+    th = sort_link searched_contracts, :galp_status, "Estado"
+
+tbody
+  - contracts.each do |contract|
+    tr [class=contract.state]
+      td.text-left = I18n.l(contract.created_at)
+      td.text-left = contract.nombre
+      td.text-left = contract.apellido
+      td.text-left = contract.cig
+      td.text-left = contract.plan_contratado
+      td.text-left = contract.moving_type
+      td.text-left = contract.teleop.try(:firstname) 
+      td.text-left = simple_form_for contract do |f|
+        = f.input :galp_status, 
+                  input_html: { class: 'foo', onchange: "update_galp_status(#{contract.id}, $(this).val())" },
+                  label: false
+      
+      td.text-left = link_to 'Ver', 
+                     contract_path(contract),
+                     class: 'btn btn-primary'
+
+      td.text-left = link_to 'Resumen', 
+                     summary_contract_path(contract),
+                     class: 'btn btn-primary'
+      
+      td.text-left = link_to 'Editar',
+                     edit_contract_path(contract),
+                     class: 'btn btn-primary'
+      
+      td.text-left = link_to 'Destruir',
+                     contract,
+                     data: {:confirm => 'Are you sure?'},
+                     :method => :delete, class: 'btn btn-danger'

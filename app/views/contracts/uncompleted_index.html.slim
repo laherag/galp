@@ -1,0 +1,48 @@
+h1 Contratos
+
+nav.navbar.navbar-default role="navigation"
+  .container-fluid
+    
+    / SEARCH FILTER
+    form#ransack-search role="form"
+      = search_form_for [searched_contracts], url: "/contracts/#{params[:action]}",
+                                              html: { class: 'navbar-form' } do |f|
+        = render partial: 'partials/search_dates_and_name', locals: { f: f }
+        = render partial: 'partials/search_status', locals: { f: f }
+        = f.submit 'Buscar', class: 'btn btn-info', style: 'float: left; margin-top:70px;'
+
+/ PAGINATION
+= paginate paginated_contracts, :theme => 'twitter-bootstrap-3'
+
+/ LEGEND
+= render partial: 'contract_legend'
+
+/ CONTRACTS TABLE
+table.table
+  thead
+    tr
+      th = sort_link searched_contracts, :created_at, "Fecha venta"
+      th = sort_link searched_contracts, :nombre, "Nombre"
+      th = sort_link searched_contracts, :apellido, "Apellido"
+      th = sort_link searched_contracts, :tipo, "Plan contratado"
+
+  tbody
+    - contracts.each do |contract|
+      tr [class=contract.state]
+        td.text-left = I18n.l(contract.created_at)
+        td.text-left = contract.nombre 
+        td.text-left = contract.apellido
+        td.text-left = contract.tipo.text if contract.tipo
+        
+        td.text-left = link_to 'Editar',
+                       edit_contract_path(contract),
+                       class: 'btn btn-primary'
+        
+        td.text-left = link_to 'Ver',
+                       contract,
+                       class: 'btn btn-primary'
+
+        td.text-left = link_to 'Destruir',
+                       contract,
+                       data: {:confirm => 'Are you sure?'},
+                       :method => :delete, class: 'btn btn-danger'

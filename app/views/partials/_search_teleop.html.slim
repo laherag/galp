@@ -1,0 +1,5 @@
+
+= f.select :teleop_id_eq, User.teleop.collect{|u| [u.firstname, u.id] }, 
+                          { prompt: 'Usario' },
+                          { class: 'form-control',
+                            style: 'margin-top: 70px' }

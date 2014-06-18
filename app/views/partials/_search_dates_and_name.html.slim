@@ -1,0 +1,16 @@
+.col-sm-3
+  = f.text_field :apellido_cont, class: 'form-control', 
+                                 style: 'margin-top: 10px; margin-bottom: 20px',
+                                 placeholder: "Apellido"
+  
+  = f.text_field :nombre_cont, class: 'form-control', 
+                               style: 'margin-top: 10px; margin-bottom: 20px',
+                               placeholder: "Nombre"
+  
+  = f.text_field :created_at_gteq, class: 'form-control datepicker', 
+                                   style: 'margin-top: 10px; margin-bottom: 20px',
+                                   placeholder: "hora de inicio"
+  
+  = f.text_field :created_at_lteq, class: 'form-control datepicker', 
+                                   style: 'margin-top: 10px; margin-bottom: 20px',
+                                   placeholder: "fecha de finalización"

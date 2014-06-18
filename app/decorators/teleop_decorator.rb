@@ -1,0 +1,2 @@
+class TeleopDecorator < ViewDecorator
+end

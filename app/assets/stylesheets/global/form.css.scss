@@ -1,0 +1,29 @@
+.left-col {
+  @extend .col-xs-5;
+  @extend .control-label;
+  @extend .text-right;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.nice-form {
+  $padding: 20px;
+  margin-top: 20px;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  @include border-radius(20px);
+}
+
+#luz-form {
+  @extend .bg-warning;
+  @extend .nice-form;
+}
+
+#gaz-form {
+  @extend .bg-success;
+  @extend .nice-form;
+}

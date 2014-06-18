@@ -1,0 +1,13 @@
+span.bg-primary [style='padding:10px'] = "CIG: #{contract.cig()}"
+
+span.bg-danger [style='margin:20px; padding:10px'] 
+  strong ¡No olvides proponer el ADSL!
+
+/uncomment to make the upload available
+/.center-block [style='width:200px; margin-top:50px']
+  = form_for @record, url: record_contract_path(contract), :html => {:multipart => true} do |f|
+    = f.file_field :file
+    br
+    button.btn.btn-success type="submit" Submit
+
+= link_to 'Submit contract', record_contract_path, method: :POST, class: 'btn btn-success'

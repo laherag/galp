@@ -1,0 +1,46 @@
+= simple_form_for contract_form do |f|
+  = render partial: 'partials/form_errors', locals: { :form => contract_form }
+
+  / CONTRACT BEGINNING
+  = f.input :nombre, required: false, label: 'Nombre nuevo titular'
+  = f.input :apellido, required: false, label: 'Apellido nuevo titular'
+  = f.input :dni_titular_final, required: false
+  = f.input :telefono_1, required: false
+  = f.input :telefono_2, required: false
+  = f.input :direccion, required: false, label: 'Dirección'
+  
+  / CITY
+  = f.input :zip_code, label: 'Código postal', required: false
+  div#zip_code_not_available.bg-danger [style='width:600px; margin:10px auto; padding: 10px; display: none; font-weight: bold'] Es imposible de crear (hacer) un contrato para este código postal
+  
+  = f.input :municipio, label: 'Municipio', required: false
+  = f.input :provincia, required: false
+  = f.input :numero_de_cuenta, required: false
+  = f.input :email, required: false, label: 'Correo electrónico'
+  = f.input :representante, required: false, label: 'Nombre completo representante'
+  = f.input :dni_representante, required: false
+  = f.input :tipo, required: false, include_blank: false
+  = f.input :confort, required: false, include_blank: false
+  = f.input :marca_caldera, required: false
+  = f.input :titular_final, required: false
+  = f.input :lopd_robinson, as: :boolean, required: false
+  = f.input :observaciones, as: :text, required: false
+
+  / GAZ
+  = f.fields_for :gaz_contract do |builder|
+    = render partial: 'gaz_contracts/gaz_contract', locals: { :f => builder }
+
+  / LUZ
+  = f.fields_for :luz_contract do |builder|
+    = render partial: 'luz_contracts/luz_contract', locals: { :f => builder }
+
+  = f.submit 'Guardar temporalmente', 
+      name: 'uncompleted', 
+      formnovalidate: true,
+      id: 'save-temporary',
+      class: 'btn btn-info',
+      style: 'margin:30px'
+  
+  = f.submit 'Marcar como completada',
+      name: 'completed', 
+      class: 'btn btn-success'

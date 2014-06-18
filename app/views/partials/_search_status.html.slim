@@ -1,0 +1,20 @@
+/ STATUS
+- status_checked = params.try(:[], :q).try(:[], :galp_status_cont_any) || [] 
+- all_statuses_checked = params[:all_statuses].present?
+
+.col-sm-3
+  - Contract.galp_status.values.each do |status|
+    .checkbox 
+      label
+        = check_box_tag 'q[galp_status_cont_any][]', 
+          status,
+          status_checked.include?(status)
+        = status.text
+
+  - if current_user.admin
+    .checkbox 
+      label
+        = check_box_tag 'all_statuses', 
+          true,
+          all_statuses_checked
+        'Todos  

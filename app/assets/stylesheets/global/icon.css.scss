@@ -1,0 +1,14 @@
+.icon {
+  @extend .glyphicon;
+}
+
+.icon-edit {
+  @extend .icon;
+  @extend .glyphicon-cog;
+ }
+
+.icon-delete {
+  @extend .icon;
+  @extend .glyphicon-remove;
+}
+  

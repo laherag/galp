@@ -1,0 +1,11 @@
+.completed {
+  @extend .bg-info;
+}
+
+.uncompleted {
+  @extend .bg-success;
+}
+
+.csv_ready {
+  @extend .bg-warning;
+}

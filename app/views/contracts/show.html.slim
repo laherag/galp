@@ -1,0 +1,18 @@
+p#notice = notice
+
+table.table.table-striped
+  - visible_attributes(contract).each do |attr|
+    - for k, v in attr
+      tr
+        td.text-right : strong = k
+        td.text-left = v
+
+  - if contract.gaz_contract?
+    = render partial: 'gaz_contracts/show_gaz_contract', locals: { :gaz_contract => contract.gaz_contract }
+
+  - if contract.luz_contract?
+    = render partial: 'luz_contracts/show_luz_contract', locals: { :luz_contract => contract.luz_contract }
+
+= link_to 'Edit', edit_contract_path(contract)
+'|
+= link_to 'Back', contracts_path

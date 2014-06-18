@@ -1,0 +1,48 @@
+body {
+  padding-top: 50px;
+}
+
+.main-container {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.form-signin {
+  max-width: 500px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+@mixin menu_link($base-color) {
+  &:hover {
+    $darken-color: darken($base-color, 40%);
+    color: $darken-color !important; 
+    background-color: $base-color !important;
+  }
+}
+
+.gaz_y_luz_link {
+  $base-color: #afd9ee;
+  color: #afd9ee !important;
+  @include menu_link($base-color);
+}
+
+.gaz_link {
+  $base-color: #c1e2b3;
+  color: #c1e2b3 !important;
+  @include menu_link($base-color);
+}
+
+.luz_link {
+  $base-color: #fcf8e3;
+  color: #fcf8e3 !important;
+  @include menu_link($base-color);
+}
+
+@import "bootstrap";
+@import "contracts";
+@import "global/*";
+@import "jquery.ui.all";

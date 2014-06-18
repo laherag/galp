@@ -1,0 +1,5 @@
+- visible_attributes(gaz_contract).each do |attr|
+    - for k, v in attr
+      tr
+        td.text-right : strong = k
+        td.text-left = v

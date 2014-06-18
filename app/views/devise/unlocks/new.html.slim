@@ -1,0 +1,16 @@
+div.form-signin
+
+  h2.form-signin-heading Mail d'activation non reçu
+
+  = form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f|
+
+    = devise_error_messages!
+
+    div.form-group
+      = f.label :email, 'Email', placeholder: 'Email'
+      = f.email_field :email, :autofocus => true, class: 'form-control'
+
+    div.form-group
+      = f.submit "Renvoyer le mail d'activation", class: 'btn btn-block btn-primary'
+
+    = render "devise/shared/links"

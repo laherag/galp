@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
+    title galp.selectra.info
+    meta [name="robots" content="noindex, nofollow"]
+    = include_gon
+body
+    #wrap
+
+      /HEADER
+      .navbar.navbar-inverse.navbar-fixed-top role="navigation"
+        .container
+          .navbar-header
+            button.navbar-toggle [data-target=".navbar-collapse" 
+                                  data-toggle="collapse" 
+                                  type="button"]
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar 
+            a.navbar-brand href=root_path GALP
+          .collapse.navbar-collapse
+            - if user_signed_in?
+              ul.nav.navbar-nav
+                = current_user.view.top_menu()
+              
+              / SIGN OUT
+              ul.nav.navbar-nav.navbar-right
+                li
+                  = link_to(destroy_user_session_path, 
+                            method: :delete, 
+                            id: 'signout_link') do
+                    i.glyphicon.glyphicon-off
+                    = " #{current_user.firstname}"
+
+      / LOGO
+      - if user_signed_in?
+        .container [style="margin-top:50px; margin-bottom:-50px"]
+          = image_tag('galp.png', width: '150')
+
+      /FLASH
+      .container
+        - if flash[:notice]
+          .flash-notice = render_md flash[:notice]
+        - if flash[:error]
+          .flash-error = render_md flash[:error]
+
+      /BODY
+      .container.main-container
+        == yield
+
+    = javascript_include_tag 'application'
+
